@@ -10,7 +10,7 @@ def get_portfolio():
         "name": "Khalid Khatibu",
         "about": "Data scientist specialized in analysis using Excel, Power BI, and programming languages like Python and R.",
         "qualifications": [
-            "BSc in Computer Science",
+            "BSc in Data Science",
             "Data Analysis & Visualization",
             "Database Administration",
             "Machine Learning Applications"
