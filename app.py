@@ -9,7 +9,7 @@ def get_portfolio():
     portfolio = {
         "name": "Khalid Khatibu",
         "about": "Data scientist specialized in analysis using Excel, Power BI, and programming languages like Python and R.",
-        "skills": ["Python", "R", "Excel", "Power BI"],
+        "skills": ["Python", "R", "Excel"],
         "projects": [
             {
                 "title": "Sales Dashboard",
@@ -23,7 +23,7 @@ def get_portfolio():
             }
         ],
         "contact": {
-            "email": "khalid@example.com",
+            "email": "khalidjuma@gmail.com",
             "github": "https://github.com/KhalidKhatibu",
             "linkedin": "https://linkedin.com/in/khalidkhatibu"
         }
