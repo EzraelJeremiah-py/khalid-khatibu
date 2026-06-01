@@ -44,20 +44,34 @@ export default function Home() {
             </ul>
           </div>
         </div>
-
         {/* Skills */}
-        <div className="card mb-4 border-0 shadow-sm">
-          <div className="card-body">
-            <h2 className="card-title text-primary">Skills</h2>
-            <div className="d-flex flex-wrap gap-2">
-              {Array.isArray(portfolio.skills)
-                ? portfolio.skills.map(skill => (
-                    <span key={skill} className="badge bg-gradient bg-info text-dark p-2">{skill}</span>
-                  ))
-                : <p>No skills listed</p>}
-            </div>
-          </div>
-        </div>
+<div className="card mb-4 border-0 shadow-sm">
+  <div className="card-body">
+  <h2 className="card-title text-primary">Skills</h2>
+  <div className="d-flex flex-wrap gap-3">
+{Array.isArray(portfolio.skills)
+  ? portfolio.skills.map(skill => (
+    <div
+    key={skill}
+    className="px-4 py-2 shadow-sm"
+    style={{
+  background: "linear-gradient(135deg, #17a2b8, #0dcaf0)",
+  color: "black",
+  borderRadius: "30px",
+  fontWeight: "500",
+  fontSize: "1rem",
+  minWidth: "120px",
+  textAlign: "center"
+}}
+>
+{skill}
+</div>
+  ))
+    : <p>No skills listed</p>
+      </div>
+      </div>
+      </div>
+
 
         {/* Projects */}
         <div className="card mb-4 border-0 shadow-sm">
