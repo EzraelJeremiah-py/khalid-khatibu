@@ -23,29 +23,45 @@ export default function Home() {
       </nav>
 
       {/* About */}
-      <div className="card mb-4">
+      <div className="card mb-4 shadow-sm">
         <div className="card-body">
           <h2 className="card-title">About</h2>
           <p className="card-text">{portfolio.about}</p>
         </div>
       </div>
 
-      {/* Skills */}
-      <div className="card mb-4">
+      {/* Qualifications */}
+      <div className="card mb-4 shadow-sm">
         <div className="card-body">
-          <h2 className="card-title">Skills</h2>
+          <h2 className="card-title">Qualifications</h2>
           <ul className="list-group list-group-flush">
-            {Array.isArray(portfolio.skills)
-              ? portfolio.skills.map(skill => (
-                  <li key={skill} className="list-group-item">{skill}</li>
+            {Array.isArray(portfolio.qualifications)
+              ? portfolio.qualifications.map((q, i) => (
+                  <li key={i} className="list-group-item">{q}</li>
                 ))
-              : <li className="list-group-item">No skills listed</li>}
+              : <li className="list-group-item">No qualifications listed</li>}
           </ul>
         </div>
       </div>
 
+      {/* Skills */}
+      <div className="card mb-4 shadow-sm">
+        <div className="card-body">
+          <h2 className="card-title">Skills</h2>
+          <div className="row">
+            {Array.isArray(portfolio.skills)
+              ? portfolio.skills.map(skill => (
+                  <div key={skill} className="col-md-4 mb-2">
+                    <span className="badge bg-primary">{skill}</span>
+                  </div>
+                ))
+              : <p>No skills listed</p>}
+          </div>
+        </div>
+      </div>
+
       {/* Projects */}
-      <div className="card mb-4">
+      <div className="card mb-4 shadow-sm">
         <div className="card-body">
           <h2 className="card-title">Projects</h2>
           {Array.isArray(portfolio.projects)
@@ -53,9 +69,6 @@ export default function Home() {
                 <div key={project.title} className="mb-3">
                   <h5>{project.title}</h5>
                   <p>{project.description}</p>
-                  <a href={project.link} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
-                    View Project
-                  </a>
                 </div>
               ))
             : <p>No projects available</p>}
@@ -63,10 +76,11 @@ export default function Home() {
       </div>
 
       {/* Contact */}
-      <div className="card mb-4">
+      <div className="card mb-4 shadow-sm">
         <div className="card-body">
           <h2 className="card-title">Contact</h2>
           <p>Email: <a href={`mailto:${portfolio.contact.email}`}>{portfolio.contact.email}</a></p>
+          <p>Phone: <a href={`tel:${portfolio.contact.phone}`}>{portfolio.contact.phone}</a></p>
           <p>GitHub: <a href={portfolio.contact.github} target="_blank" rel="noreferrer">{portfolio.contact.github}</a></p>
           <p>LinkedIn: <a href={portfolio.contact.linkedin} target="_blank" rel="noreferrer">{portfolio.contact.linkedin}</a></p>
         </div>
